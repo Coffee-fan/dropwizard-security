@@ -1,6 +1,6 @@
 package com.example.security;
 
-import com.yammer.dropwizard.auth.AuthenticationException;
+import io.dropwizard.auth.AuthenticationException;
 import org.junit.Test;
 
 public class ExampleAuthenticatorTests {

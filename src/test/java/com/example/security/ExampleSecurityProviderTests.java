@@ -5,9 +5,9 @@ import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.test.framework.AppDescriptor;
 import com.sun.jersey.test.framework.JerseyTest;
 import com.sun.jersey.test.framework.LowLevelAppDescriptor;
-import com.yammer.dropwizard.auth.Auth;
 import com.yammer.dropwizard.config.LoggingFactory;
-import com.yammer.dropwizard.jersey.DropwizardResourceConfig;
+import io.dropwizard.auth.Auth;
+import io.dropwizard.jersey.DropwizardResourceConfig;
 import org.junit.Test;
 
 import javax.ws.rs.GET;

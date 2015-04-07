@@ -8,6 +8,8 @@ import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.UniformInterfaceException;
 import com.yammer.dropwizard.testing.ResourceTest;
 import com.yammer.dropwizard.validation.InvalidEntityException;
+
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

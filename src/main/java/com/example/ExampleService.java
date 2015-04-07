@@ -5,11 +5,11 @@ import com.example.resources.UserResource;
 
 import com.example.security.ExampleAuthenticator;
 import com.example.security.ExampleSecurityProvider;
-import com.yammer.dropwizard.config.Bootstrap;
-import com.yammer.dropwizard.config.Configuration;
-import com.yammer.dropwizard.config.Environment;
+import io.dropwizard.Application;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
 
-public class ExampleService extends com.yammer.dropwizard.Service<ExampleConfiguration> {
+public class ExampleService extends Application<ExampleConfiguration> {
 
     public static void main(String[] args) throws Exception
     {
@@ -18,14 +18,14 @@ public class ExampleService extends com.yammer.dropwizard.Service<ExampleConfigu
 
     @Override
     public void initialize(Bootstrap bootstrap) {
-        bootstrap.setName("dropwizard-security");
+        //bootstrap.setName("dropwizard-security");
     }
 
     @Override
     public void run(ExampleConfiguration configuration, Environment environment) throws Exception {
-        environment.addResource(new UserResource());
+        environment.jersey().register(new UserResource());
 
         // Adds security provider so resource methods decorated with auth attribute will use this authenticator
-        environment.addProvider(new ExampleSecurityProvider<User>(new ExampleAuthenticator()));
+        environment.jersey().register(new ExampleSecurityProvider<User>(new ExampleAuthenticator()));
     }
 }

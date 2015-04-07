@@ -13,6 +13,7 @@ import java.util.Set;
 import static com.yammer.dropwizard.testing.JsonHelpers.asJson;
 import static com.yammer.dropwizard.testing.JsonHelpers.fromJson;
 import static com.yammer.dropwizard.testing.JsonHelpers.jsonFixture;
+
 import static org.junit.Assert.assertEquals;
 
 public class UserTests {

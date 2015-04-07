@@ -1,7 +1,7 @@
 package com.example.resources;
 
 import com.example.core.User;
-import com.yammer.dropwizard.auth.Auth;
+import io.dropwizard.auth.Auth;
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
