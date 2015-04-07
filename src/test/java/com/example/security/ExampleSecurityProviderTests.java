@@ -42,7 +42,7 @@ public class ExampleSecurityProviderTests extends JerseyTest {
 
     @Override
     protected AppDescriptor configure() {
-        final DropwizardResourceConfig config = new DropwizardResourceConfig.forTesting(new MetricRegistry());
+        final DropwizardResourceConfig config = DropwizardResourceConfig.forTesting(new MetricRegistry());
         final ExampleAuthenticator authenticator = new ExampleAuthenticator();
 
         config.getSingletons().add(new ExampleSecurityProvider<>(authenticator));
