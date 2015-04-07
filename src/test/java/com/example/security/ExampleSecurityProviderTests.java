@@ -1,11 +1,12 @@
 package com.example.security;
 
+import com.codahale.metrics.MetricRegistry;
 import com.example.core.User;
 import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.test.framework.AppDescriptor;
 import com.sun.jersey.test.framework.JerseyTest;
 import com.sun.jersey.test.framework.LowLevelAppDescriptor;
-import com.yammer.dropwizard.config.LoggingFactory;
+import io.dropwizard.logging.LoggingFactory;
 import io.dropwizard.auth.Auth;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import org.junit.Test;
@@ -41,7 +42,7 @@ public class ExampleSecurityProviderTests extends JerseyTest {
 
     @Override
     protected AppDescriptor configure() {
-        final DropwizardResourceConfig config = new DropwizardResourceConfig(true);
+        final DropwizardResourceConfig config = new DropwizardResourceConfig.forTesting(new MetricRegistry());
         final ExampleAuthenticator authenticator = new ExampleAuthenticator();
 
         config.getSingletons().add(new ExampleSecurityProvider<>(authenticator));
