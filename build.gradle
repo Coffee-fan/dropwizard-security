@@ -42,7 +42,8 @@ dependencies {
         'com.sun.jersey:jersey-client:' + jerseyVersion
     )
     testCompile (
-        'io.dropwizard:dropwizard-testing:' + dropwizardVersion
+        'io.dropwizard:dropwizard-testing:' + dropwizardVersion,
+        'org.assertj:assertj-core:3.0.0'
     )
 }
 
