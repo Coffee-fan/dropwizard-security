@@ -51,7 +51,7 @@ public class UserTests {
     @Test
     public void deserializesFromJSON() throws Exception {
         final User user = getUser();
-        assertThat(MAPPER.readValue(fixture("fixtures/user.json"), User.class)).isEqualToComparingFieldByField(user);
+        assertThat(MAPPER.readValue(fixture("fixtures/user.json"), User.class)).isEqualTo(user);
     }
 
     // Should be replaced with individual class field validator tests
